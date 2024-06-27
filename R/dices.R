@@ -11,9 +11,6 @@
 #' @examples
 #' d4(5)
 #'
-#' @importFrom base sample
-#' @importFrom base paste
-#' @importFrom base message
 d4 <- function(n = 1, verbose = TRUE) {
 
     o <- sample(1:4, size = n, replace = TRUE)
@@ -36,9 +33,6 @@ d4 <- function(n = 1, verbose = TRUE) {
 #' @examples
 #' d6(5)
 #'
-#' @importFrom base sample
-#' @importFrom base paste
-#' @importFrom base message
 d6 <- function(n = 1, verbose = TRUE) {
 
     o <- sample(1:6, size = n, replace = TRUE)
@@ -62,9 +56,6 @@ d6 <- function(n = 1, verbose = TRUE) {
 #' @examples
 #' d8(5)
 #'
-#' @importFrom base sample
-#' @importFrom base paste
-#' @importFrom base message
 d8 <- function(n = 1, verbose = TRUE) {
 
     o <- sample(1:8, size = n, replace = TRUE)
@@ -87,9 +78,6 @@ d8 <- function(n = 1, verbose = TRUE) {
 #' @examples
 #' d10(5)
 #'
-#' @importFrom base sample
-#' @importFrom base paste
-#' @importFrom base message
 d10 <- function(n = 1, verbose = TRUE) {
 
     o <- sample(1:10, size = n, replace = TRUE)
@@ -112,9 +100,6 @@ d10 <- function(n = 1, verbose = TRUE) {
 #' @examples
 #' d12(5)
 #'
-#' @importFrom base sample
-#' @importFrom base paste
-#' @importFrom base message
 d12 <- function(n = 1, verbose = TRUE) {
 
     o <- sample(1:12, size = n, replace = TRUE)
@@ -125,4 +110,23 @@ d12 <- function(n = 1, verbose = TRUE) {
 
 }
 
+#' d20
+#'
+#' @param n integer value. number of d6 dices to roll
+#' @param verbose logical value. If true it will print message
+#'
+#' @return integer
+#' @export
+#'
+#' @examples
+#' d20()
+#'
+d20 <- function(n = 1, verbose = TRUE) {
 
+    o <- sample(1:20, size = n, replace = TRUE)
+
+    if(verbose) message( paste(o, collapse = " + ") )
+
+    return( sum(o) )
+
+}
